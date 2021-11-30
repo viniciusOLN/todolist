@@ -2,6 +2,81 @@
 
 /* navbar */
 
+nav{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 35px;
+}
+
+.brand{
+    display: flex;
+    align-items: center;
+}
+
 .brand h1{
     display: inline-block;
+}
+
+.brand i{
+    font-size: 25px;
+    margin-right: 6px;
+}
+
+.input{
+    border: 1px solid var(--default-white);
+    width: 567px;
+    height: 30px;
+    outline: none;
+    padding: 20px 50px;
+    background-color: var(--background-blue-strong);
+    color: var(--default-white);
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    var(--default-white);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    var(--default-white);
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    var(--default-white);
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    var(--default-white);
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    var(--default-white);
+}
+
+::placeholder { /* Most modern browsers support this now. */
+   color:    var(--default-white);
+}
+
+.input-search{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-search i{
+    position: absolute;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.login{
+    padding: 10px 30px;
+    background-color: var(--background-blue-strong);
+    border: 1px solid var(--default-white);
+    color: var(--default-white);
+    font-weight: 780;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login:hover{
+    background-color: var(--default-white);
+    color: var(--background-blue-strong);
 }

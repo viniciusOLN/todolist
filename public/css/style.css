@@ -12,8 +12,12 @@
     --text-blue-strong: #4946EA;
     --text-blue-weak: #312ED3;
     --text-blue-gray: #575757;
+
+    --default-white: #fff;
 }
 
 body{
     font-family: Montserrat;
+    background: var(--background-blue-strong);
+    color: var(--default-white);
 }
