@@ -1,0 +1,7 @@
+@import url('../css/style.css');
+
+/* navbar */
+
+.brand h1{
+    display: inline-block;
+}
