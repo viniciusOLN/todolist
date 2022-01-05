@@ -98,7 +98,6 @@ nav{
     width: 33%;
     max-height: 50%;
     background-color: var(--default-white);
-    /* margin: 1%; */
     border-radius: 6px;
     padding: 25px 20px;
 }
@@ -113,6 +112,12 @@ nav{
 .todo-head i{  
     font-size: 22px;  
     cursor: pointer;
+    padding: 2px;    
+}
+
+.todo-head i:hover{  
+    background-color: var(--add-hover);
+    border-radius: 50%;
 }
 
 .todo-title{

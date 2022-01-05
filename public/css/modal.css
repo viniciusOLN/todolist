@@ -1,0 +1,30 @@
+@import url('../css/style.css');
+
+.background{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.589);
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal{
+    border-radius: 4px;
+    padding: 50px;
+    position: relative;
+}
+
+.modal i{
+    cursor: pointer;
+    color: var(--text-blue-gray);
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+    font-size: 25px;
+}
