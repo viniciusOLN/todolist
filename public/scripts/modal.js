@@ -13,10 +13,7 @@ class Modal{
     constructor(modalSetings){
         this.heigth = modalSetings.heigth
         this.width = modalSetings.width
-        this.backgroundColor = modalSetings.backgroundColor
-        this.fontFamily = modalSetings.fontFamily
-        this.fontColor = modalSetings.fontColor
-        this.center = modalSetings.center 
+        this.backgroundColor = modalSetings.backgroundColor        
         this.addClass = Modal.addClass()       
     }
 
@@ -27,25 +24,22 @@ class Modal{
 
         const div = document.createElement('div')
         const newNode = document.body.appendChild(div)
-        newNode.setAttribute('class', 'modal')
-
-        const closeButton = document.createElement('i')
-        const closeNode = document.body.appendChild(closeButton)
-        closeNode.setAttribute('class', 'ri-close-fill')
+        newNode.setAttribute('class', 'modal')        
 
         newNode.style.backgroundColor = this.backgroundColor
         newNode.style.height = this.heigth
         newNode.style.width = this.width
-        
-        newNode.appendChild(closeNode)
+    
         newNodeBack.appendChild(newNode)
 
         document.body.style.overflowY = 'hidden'
+    }
 
+    closeModal(){
         const close = document.querySelector('.ri-close-fill')          
         close.addEventListener('click', () => {           
           this.removeModal()           
-        })             
+        })  
     }
 
     removeModal(){
@@ -57,8 +51,17 @@ class Modal{
         document.body.style.overflowY = 'scroll'
     }
 
-    addElement(){
+    addElement(fatherClass, className, elementName, textOptional){
+        const father = document.querySelector(`.${fatherClass}`)
+        const newElement = document.createElement(`${elementName}`)
+        const newElementNode = document.body.appendChild(newElement)
+        newElement.setAttribute('class', `${className}`)           
 
+        father.appendChild(newElementNode)
+        
+        if(!(textOptional == undefined)){
+            newElement.innerText = textOptional
+        }   
     }
 }
 
