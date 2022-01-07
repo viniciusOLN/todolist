@@ -51,7 +51,7 @@ class Modal{
         document.body.style.overflowY = 'scroll'
     }
 
-    addElement(fatherClass, className, elementName, textOptional){
+    addElement(fatherClass, className, elementName, textOptional, typeInput){
         const father = document.querySelector(`.${fatherClass}`)
         const newElement = document.createElement(`${elementName}`)
         const newElementNode = document.body.appendChild(newElement)
@@ -59,9 +59,10 @@ class Modal{
 
         father.appendChild(newElementNode)
         
-        if(!(textOptional == undefined)){
+        if(!(textOptional == undefined))
             newElement.innerText = textOptional
-        }   
+        if(elementName === 'input')
+            newElement.setAttribute('type', `${typeInput}`)            
     }
 }
 

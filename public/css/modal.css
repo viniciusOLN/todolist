@@ -13,6 +13,7 @@
 }
 
 .modal{
+    color: var(--text-blue-gray);
     border-radius: 4px;
     padding: 20px;
     position: relative;
@@ -26,6 +27,11 @@
     right: 0;
     margin: 20px;
     font-size: 25px;
+}
+
+.modal i:hover{
+    background-color: var(--add-hover);
+    border-radius: 50%;
 }
 
 .title{
