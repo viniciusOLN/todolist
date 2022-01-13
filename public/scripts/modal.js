@@ -47,22 +47,30 @@ class Modal{
         const background = document.querySelector('.background')
         modal.parentNode.removeChild(modal)            
         background.parentNode.removeChild(background) 
+        document.getElementsByTagName("head")[0].removeChild(link)
 
         document.body.style.overflowY = 'scroll'
     }
 
-    addElement(fatherClass, className, elementName, textOptional, typeInput){
+    addElement({fatherClass, className, elementName, textOptional, typeInput, selectValues}){
         const father = document.querySelector(`.${fatherClass}`)
-        const newElement = document.createElement(`${elementName}`)
-        const newElementNode = document.body.appendChild(newElement)
+        const newElement = document.createElement(`${elementName}`)        
         newElement.setAttribute('class', `${className}`)           
 
-        father.appendChild(newElementNode)
+        father.appendChild(newElement)
         
-        if(!(textOptional == undefined))
+        if(!(textOptional === undefined))
             newElement.innerText = textOptional
         if(elementName === 'input')
-            newElement.setAttribute('type', `${typeInput}`)            
+            newElement.setAttribute('type', `${typeInput}`)
+        if(elementName === 'select'){            
+          for(let item in selectValues){          
+            const optionElement = document.createElement("option")
+            optionElement.setAttribute('value', item)
+            optionElement.innerText = selectValues[item]
+            newElement.appendChild(optionElement)
+          }
+        }           
     }
 }
 

@@ -15,18 +15,24 @@ function stateModal(item){
   item.addEventListener('click', () => {
     modal.createModal()  
     
-    modal.addElement('modal', 'title', 'h2', 'Adicionar nova tarefa')
-    modal.addElement('modal', 'ri-close-fill', 'i')
-    modal.addElement('modal', 'task-div', 'div')
-    modal.addElement('task-div', 'label', 'p', 'Nova Tarefa')
-    modal.addElement('task-div', 'label', 'p', 'Título da tarefa')
-    modal.addElement('task-div', 'input-task', 'input', 'text')
-    modal.addElement('task-div', 'label', 'p', 'Descrição da Tarefa')
-    modal.addElement('task-div', 'input-task', 'input', 'text')
-    modal.addElement('task-div', 'label', 'p', 'Responsável')
-    modal.addElement('task-div', 'input-task', 'input', 'text')
-    modal.addElement('task-div', 'label', 'p', 'Responsável')
-    modal.addElement('task-div', 'input-task', 'textarea', 'text')
+    modal.addElement({fatherClass:'modal', className: 'title', elementName: 'h2', textOptional: 'Adicionar nova tarefa'})
+    modal.addElement({fatherClass:'modal', className: 'ri-close-fill', elementName: 'i'})
+    modal.addElement({fatherClass: 'modal', className: 'task-div', elementName: 'div'})
+    modal.addElement({fatherClass: 'task-div', className: 'label', elementName: 'p', textOptional: 'Nova Tarefa'})
+    modal.addElement({fatherClass: 'task-div', className: 'label', elementName: 'p', textOptional: 'Título da tarefa'})
+    modal.addElement({fatherClass: 'task-div', className: 'input-task', elementName: 'input'})
+    modal.addElement({fatherClass: 'task-div', className: 'label', elementName: 'p', textOptional: 'Descrição da Tarefa'})
+    modal.addElement({fatherClass: 'task-div', className: 'input-task', elementName: 'input'})
+    modal.addElement({fatherClass: 'task-div', className: 'label', elementName: 'p', textOptional: 'Responsável'})
+    modal.addElement({fatherClass: 'task-div', className: 'input-task', elementName: 'input'})
+    modal.addElement({fatherClass: 'task-div', className: 'label', elementName: 'p', textOptional: 'Descrição detalhada da tarefa'})
+    modal.addElement({fatherClass: 'task-div', className: 'input-task', elementName: 'textarea', typeInput:'text'})
+    modal.addElement({fatherClass: 'task-div', className: 'input-select', elementName: 'select', selectValues: {
+      0: "Concluída",
+      1:"Aberta",
+      2:"Em andamento"
+      }
+    })
 
     modal.closeModal()
   })
